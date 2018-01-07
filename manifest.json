@@ -1,0 +1,29 @@
+{
+  "name": "GodView",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "WebExtension that periodically sends your location to some server.",
+  "homepage_url": "https://github.com/jack-michaud/godview",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "default_locale": "en",
+  "background": {
+    "page": "src/bg/background.html"
+  },
+  "permissions": [
+    "geolocation"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "src/inject/inject.js"
+      ]
+    }
+  ]
+}
